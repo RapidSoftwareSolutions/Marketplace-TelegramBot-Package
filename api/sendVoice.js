@@ -1,5 +1,3 @@
-//https://upload.wikimedia.org/wikipedia/commons/c/c8/Example.ogg
-
 const lib         = require('../lib/functions');
 const TelegramBot = require('node-telegram-bot-api');
 

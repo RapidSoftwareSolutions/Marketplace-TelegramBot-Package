@@ -1,5 +1,3 @@
-//http://www.gstatic.com/webp/gallery/1.webp
-
 const lib         = require('../lib/functions');
 const TelegramBot = require('node-telegram-bot-api');
 

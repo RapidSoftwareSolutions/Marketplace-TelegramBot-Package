@@ -1,8 +1,6 @@
 'use strict';
 global.PACKAGE_NAME = "TelegramBot";
 
-// 236232817
-
 const express       = require('express');
 const request       = require('request');
 const bodyParser    = require('body-parser');

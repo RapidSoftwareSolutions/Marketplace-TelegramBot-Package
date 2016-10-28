@@ -1,5 +1,3 @@
-//http://www.w3schools.com/html/mov_bbb.mp4
-
 const lib         = require('../lib/functions');
 const TelegramBot = require('node-telegram-bot-api');
 

@@ -1,6 +1,3 @@
-// 50.4608806
-// 30.6409787
-
 const lib         = require('../lib/functions');
 const TelegramBot = require('node-telegram-bot-api');
 

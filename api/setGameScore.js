@@ -5,6 +5,7 @@ module.exports = (req, res) => {
     let {
         token,
         chatId,
+        userId,
         score,
         messageId,
         inlineMessageId,
@@ -15,10 +16,11 @@ module.exports = (req, res) => {
 
     let bot     = new TelegramBot(token);
     let options = lib.clearArgs({
+        user_id:           userId,
         message_id:        messageId,
         inline_message_id: inlineMessageId,
         edit_message:      editMessage
     })
 
-    return bot.setGameScore(userId, score, options);
+    return bot.setGameScore(chatId, score, options);
 }
