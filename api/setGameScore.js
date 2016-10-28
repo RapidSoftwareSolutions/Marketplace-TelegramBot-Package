@@ -16,6 +16,7 @@ module.exports = (req, res) => {
 
     let bot     = new TelegramBot(token);
     let options = lib.clearArgs({
+        chat_id:           chatId,
         user_id:           userId,
         message_id:        messageId,
         inline_message_id: inlineMessageId,
