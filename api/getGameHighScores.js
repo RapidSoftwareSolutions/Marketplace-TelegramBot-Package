@@ -14,7 +14,6 @@ module.exports = (req, res) => {
 
     if(!token) throw new Error('Required fields: token');
 
-    let bot     = new TelegramBot(token);
     let options = lib.clearArgs({
         chat_id:           chatId,
         message_id:        messageId,
