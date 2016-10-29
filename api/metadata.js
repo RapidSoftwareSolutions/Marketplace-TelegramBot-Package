@@ -1283,6 +1283,11 @@ module.exports.do = function(req, res){
                     info: "Authentication token",
                 },
                 {
+                    name: "userId",
+                    type: "String",
+                    info: "Target user id"
+                },
+                {
                     name: "chatId",
                     type: "String",
                     info: "Unique identifier for the target chat or username of the target channel (in the format @channelusername)"

@@ -20,7 +20,9 @@ module.exports = (req, res) => {
         chat_id:           chatId,
         message_id:        messageId,
         inline_message_id: inlineMessageId,
-    })
+    });
+
+    console.log(options);
 
     let uri  = `https://api.telegram.org/bot${token}/getGameHighScores`;
 
