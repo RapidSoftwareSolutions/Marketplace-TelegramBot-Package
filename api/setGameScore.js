@@ -27,7 +27,7 @@ module.exports = (req, res) => {
 
     console.log(options);
 
-    let uri  = `https://api.telegram.org/bot${token}/setGameHighScores`;
+    let uri  = `https://api.telegram.org/bot${token}/setGameScore`;
 
     request({
         url: uri,
