@@ -9,12 +9,14 @@ module.exports = (req, res) => {
         token,
         chatId,
         messageId,
+        userId,
         inlineMessageId,
     } = req.body.args;
 
     if(!token) throw new Error('Required fields: token');
 
     let options = lib.clearArgs({
+        user_id:           userId,
         chat_id:           chatId,
         message_id:        messageId,
         inline_message_id: inlineMessageId,
