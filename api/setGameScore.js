@@ -1,7 +1,10 @@
-const lib         = require('../lib/functions');
-const TelegramBot = require('node-telegram-bot-api');
+const Q        = require('q');
+const lib      = require('../lib/functions');
+const request  = require('request');
 
 module.exports = (req, res) => {
+    const defered = Q.defer();
+
     let {
         token,
         chatId,
@@ -14,14 +17,27 @@ module.exports = (req, res) => {
 
     if(!token) throw new Error('Required fields: token');
 
-    let bot     = new TelegramBot(token);
     let options = lib.clearArgs({
         chat_id:           chatId,
         user_id:           userId,
         message_id:        messageId,
         inline_message_id: inlineMessageId,
         edit_message:      editMessage
-    })
+    });
 
-    return bot.setGameScore(chatId, score, options);
+    console.log(options);
+
+    let uri  = `https://api.telegram.org/bot${token}/setGameHighScores`;
+
+    request({
+        url: uri,
+        qs:  options
+    }, (err, response, reslut) => {
+        if(!err && response.statusCode == 200) 
+            defered.resolve(JSON.parse(reslut));
+        else 
+            defered.reject(err || JSON.parse(reslut));
+    });
+
+    return defered.promise;
 }
