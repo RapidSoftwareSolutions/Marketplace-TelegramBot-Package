@@ -17,7 +17,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token.",
                 },
                 {
@@ -42,7 +42,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token",
                 },
             ],
@@ -62,7 +62,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token",
                 },
                 {
@@ -97,7 +97,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token",
                 },
                 {
@@ -152,7 +152,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token",
                 },
                 {
@@ -192,7 +192,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token",
                 },
                 {
@@ -242,7 +242,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token",
                 },
                 {
@@ -292,7 +292,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token",
                 },
                 {
@@ -342,7 +342,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token",
                 },
                 {
@@ -407,7 +407,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token",
                 },
                 {
@@ -477,7 +477,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token",
                 },
                 {
@@ -532,7 +532,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token",
                 },
                 {
@@ -582,7 +582,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token",
                 },
                 {
@@ -637,7 +637,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token",
                 },
                 {
@@ -667,7 +667,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token",
                 },
                 {
@@ -702,7 +702,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token",
                 },
                 {
@@ -727,7 +727,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token",
                 },
                 {
@@ -757,7 +757,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token",
                 },
                 {
@@ -782,7 +782,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token",
                 },
                 {
@@ -812,7 +812,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token",
                 },
                 {
@@ -842,7 +842,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token",
                 },
                 {
@@ -867,7 +867,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token",
                 },
                 {
@@ -892,7 +892,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token",
                 },
                 {
@@ -917,7 +917,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token",
                 },
                 {
@@ -947,7 +947,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token",
                 },
                 {
@@ -987,7 +987,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token",
                 },
                 {
@@ -1042,7 +1042,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token",
                 },
                 {
@@ -1088,7 +1088,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token",
                 },
                 {
@@ -1129,7 +1129,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token",
                 },
                 {
@@ -1184,7 +1184,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token",
                 },
                 {
@@ -1229,7 +1229,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token",
                 },
                 {
@@ -1279,7 +1279,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token",
                 },
                 {
@@ -1319,7 +1319,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token",
                 },
                 {
@@ -1354,7 +1354,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token",
                 },
                 {

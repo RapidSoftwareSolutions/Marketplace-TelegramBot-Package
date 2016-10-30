@@ -25,8 +25,6 @@ module.exports = (req, res) => {
         edit_message:      editMessage
     });
 
-    console.log(options);
-
     let uri  = `https://api.telegram.org/bot${token}/setGameScore`;
 
     request({
