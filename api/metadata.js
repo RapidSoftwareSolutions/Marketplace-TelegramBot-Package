@@ -941,7 +941,7 @@ module.exports.do = function(req, res){
                     'info': 'Success'
                 }
             ]
-        }, {
+        }, /*{
             "name":"answerCallbackQuery",
             "description": "Use this method to send answers to callback queries sent from inline keyboards. The answer will be displayed to the user as a notification at the top of the chat screen or as an alert. On success, True is returned.",
             "args":[
@@ -981,7 +981,7 @@ module.exports.do = function(req, res){
                     'info': 'Success'
                 }
             ]
-        }, {
+        },*/ {
             "name":"editMessageText",
             "description": "Use this method to edit text and game messages sent by the bot or via the bot (for inline bots). On success, if edited message is sent by the bot, the edited Message is returned, otherwise True is returned.",
             "args":[
@@ -1123,7 +1123,7 @@ module.exports.do = function(req, res){
                     'info': 'Success'
                 }
             ]
-        }, {
+        }, /*{
             "name":"answerInlineQuery",
             "description": "Use this method to send answers to an inline query. On success, True is returned.",
             "args":[
@@ -1178,7 +1178,7 @@ module.exports.do = function(req, res){
                     'info': 'Success'
                 }
             ]
-        }, {
+        }, */{
             "name":"sendGame",
             "description": "Use this method to send a game. On success, the sent Message is returned.",
             "args":[
@@ -1223,7 +1223,7 @@ module.exports.do = function(req, res){
                     'info': 'Success'
                 }
             ]
-        }, {
+        }, /*{
             "name":"setGameScore",
             "description": "Use this method to set the score of the specified user in a game. On success, if the message was sent by the bot, returns the edited Message, otherwise returns True. Returns an error, if the new score is not greater than the user's current score in the chat.",
             "args":[
@@ -1273,7 +1273,7 @@ module.exports.do = function(req, res){
                     'info': 'Success'
                 }
             ]
-        }, {
+        }, */{
             "name":"getGameHighScores",
             //"desciption": "Use this method to get data for high score tables. Will return the score of the specified user and several of his neighbors in a game. On success, returns an Array of GameHighScore objects."
             "args":[
