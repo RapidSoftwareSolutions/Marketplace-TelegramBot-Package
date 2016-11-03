@@ -1082,7 +1082,7 @@ module.exports.do = function(req, res){
                     'info': 'Success'
                 }
             ]
-        }, {
+        }, /*{
             "name":"editMessageReplyMarkup",
             "description": "Use this method to edit only the reply markup of messages sent by the bot or via the bot (for inline bots). On success, if edited message is sent by the bot, the edited Message is returned, otherwise True is returned.",
             "args":[
@@ -1123,7 +1123,7 @@ module.exports.do = function(req, res){
                     'info': 'Success'
                 }
             ]
-        }, /*{
+        }, {
             "name":"answerInlineQuery",
             "description": "Use this method to send answers to an inline query. On success, True is returned.",
             "args":[
