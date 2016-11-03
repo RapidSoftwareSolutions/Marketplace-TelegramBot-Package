@@ -364,32 +364,6 @@ Use this method to edit captions of messages sent by the bot or via the bot (for
 | caption        | String     | New caption of the message
 | replyMarkup    | JSON       | A JSON-serialized object for an inline keyboard.
 
-<a name="editMessageReplyMarkup"/>
-## Telegram.editMessageReplyMarkup
-Use this method to edit only the reply markup of messages sent by the bot or via the bot (for inline bots). On success, if edited message is sent by the bot, the edited Message is returned, otherwise True is returned.
-
-| Field          | Type       | Description
-|----------------|------------|----------
-| token          | credentials| Authentication token
-| chatId         | String     | Unique identifier for the target group or username of the target supergroup (in the format @supergroupusername)
-| messageId      | Number     | Required if inline_message_id is not specified. Unique identifier of the sent message
-| inlineMessageId| String     | Required if chat_id and message_id are not specified. Identifier of the inline message
-| replyMarkup    | JSON       | A JSON-serialized object for an inline keyboard.
-
-<a name="answerInlineQuery"/>
-## Telegram.answerInlineQuery
-Use this method to send answers to an inline query. On success, True is returned.
-
-| Field            | Type       | Description
-|------------------|------------|----------
-| token            | credentials| Authentication token
-| inlineQueryId    | String     | Unique identifier for the answered query
-| results          | JSON       | A JSON-serialized array of results for the inline query
-| cacheTime        | String     | The maximum amount of time in seconds that the result of the inline query may be cached on the server. Defaults to 300.
-| isPersonal       | String     | Pass True, if results may be cached on the server side only for the user that sent the query. By default, results may be returned to any user who sends the same query
-| nextOffset       | String     | Pass the offset that a client should send in the next query with the same text to receive more results. Pass an empty string if there are no more results or if you don‘t support pagination. Offset length can’t exceed 64 bytes.
-| switchPmText     | String     | If passed, clients will display a button with specified text that switches the user to a private chat with the bot and sends the bot a start message with the parameter switch_pm_parameter
-| switchPmParameter| String     | Parameter for the start message sent to the bot when user presses the switch button
 
 <a name="sendGame"/>
 ## Telegram.sendGame
@@ -403,43 +377,6 @@ Use this method to send a game. On success, the sent Message is returned.
 | disableNotification| String     | Sends the message silently.
 | replyToMessageId   | Number     | If the message is a reply, ID of the original message.
 | replyMarkup        | JSON       | Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard,  instructions to hide reply keyboard or to force a reply from the user.
-
-<a name="setGameScore"/>
-## Telegram.setGameScore
-Use this method to set the score of the specified user in a game. On success, if the message was sent by the bot, returns the edited Message, otherwise returns True. Returns an error, if the new score is not greater than the user's current score in the chat.
-
-| Field          | Type       | Description
-|----------------|------------|----------
-| token          | credentials| Authentication token
-| chatId         | String     | Unique identifier for the target chat or username of the target channel (in the format @channelusername)
-| userId         | Number     | User identifier
-| score          | String     | New score, must be positive
-| messageId      | Number     | Required if inline_message_id is not specified. Unique identifier of the sent message
-| inlineMessageId| String     | Required if chat_id and message_id are not specified. Identifier of the inline message
-| editMessage    | String     | Pass True, if the game message should be automatically edited to include the current scoreboard
-
-<a name="getGameHighScores"/>
-## Telegram.getGameHighScores
-Method description
-
-| Field          | Type       | Description
-|----------------|------------|----------
-| token          | credentials| Authentication token
-| userId         | String     | Target user id
-| chatId         | String     | Unique identifier for the target chat or username of the target channel (in the format @channelusername)
-| messageId      | Number     | Required if inline_message_id is not specified. Unique identifier of the sent message
-| inlineMessageId| String     | Required if chat_id and message_id are not specified. Identifier of the inline message
-
-<a name="getGameHighScores"/>
-## Telegram.getGameHighScores
-Method description
-
-| Field          | Type       | Description
-|----------------|------------|----------
-| token          | credentials| Authentication token
-| chatId         | String     | Unique identifier for the target chat or username of the target channel (in the format @channelusername)
-| messageId      | Number     | Required if inline_message_id is not specified. Unique identifier of the sent message
-| inlineMessageId| String     | Required if chat_id and message_id are not specified. Identifier of the inline message
 
 <a name="getWebhookInfo"/>
 ## Telegram.getWebhookInfo
