@@ -48,6 +48,13 @@ Send text message.
 | replyToMessageId     | Number     | If the message is a reply, ID of the original message.
 | replyMarkup          | JSON       | Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard,  instructions to hide reply keyboard or to force a reply from the user.
 
+`replyMarkup` example:
+```json
+{
+	keyboard: [
+  		['RapidAPI ❤']]
+}
+```
 
 ## Telegram.forwardMessage
 Forward messages of any kind.
@@ -74,6 +81,12 @@ Send a photo.
 | replyToMessageId   | Number     | If the message is a reply, ID of the original message
 | replyMarkup        | JSON       | Additional interface options.  A JSON-serialized object for an inline keyboard, custom reply keyboard,  instructions to hide reply keyboard or to force a reply from the user.
 
+`replyMarkup` example:
+```json
+{
+	keyboard: [
+  		['RapidAPI ❤']]
+}
 
 ## Telegram.sendDocument
 Send a document.
@@ -88,6 +101,12 @@ Send a document.
 | replyToMessageId   | Number     | If the message is a reply, ID of the original message
 | replyMarkup        | JSON       | Additional interface options.  A JSON-serialized object for an inline keyboard, custom reply keyboard,  instructions to hide reply keyboard or to force a reply from the user.
 
+`replyMarkup` example:
+```json
+{
+	keyboard: [
+  		['RapidAPI ❤']]
+}
 
 ## Telegram.sendSticker
 Send a sticker.
@@ -102,6 +121,12 @@ Send a sticker.
 | replyToMessageId   | Number     | If the message is a reply, ID of the original message
 | replyMarkup        | JSON       | Additional interface options.  A JSON-serialized object for an inline keyboard, custom reply keyboard,  instructions to hide reply keyboard or to force a reply from the user.
 
+`replyMarkup` example:
+```json
+{
+	keyboard: [
+  		['RapidAPI ❤']]
+}
 
 ## Telegram.sendAudio
 Send a audio.
@@ -119,6 +144,12 @@ Send a audio.
 | replyToMessageId   | Number     | If the message is a reply, ID of the original message
 | replyMarkup        | JSON       | Additional interface options.  A JSON-serialized object for an inline keyboard, custom reply keyboard,  instructions to hide reply keyboard or to force a reply from the user.
 
+`replyMarkup` example:
+```json
+{
+	keyboard: [
+  		['RapidAPI ❤']]
+}
 
 ## Telegram.sendVideo
 Send a video.
@@ -137,6 +168,12 @@ Send a video.
 | replyToMessageId   | Number     | If the message is a reply, ID of the original message
 | replyMarkup        | JSON       | Additional interface options.  A JSON-serialized object for an inline keyboard, custom reply keyboard,  instructions to hide reply keyboard or to force a reply from the user.
 
+`replyMarkup` example:
+```json
+{
+	keyboard: [
+  		['RapidAPI ❤']]
+}
 
 ## Telegram.sendVoice
 Send a voice.
@@ -152,6 +189,12 @@ Send a voice.
 | replyToMessageId   | Number     | If the message is a reply, ID of the original message
 | replyMarkup        | JSON       | Additional interface options.  A JSON-serialized object for an inline keyboard, custom reply keyboard,  instructions to hide reply keyboard or to force a reply from the user.
 
+`replyMarkup` example:
+```json
+{
+	keyboard: [
+  		['RapidAPI ❤']]
+}
 
 ## Telegram.sendLocation
 Send a location.
@@ -166,6 +209,12 @@ Send a location.
 | replyToMessageId   | String     | If the message is a reply, ID of the original message
 | replyMarkup        | JSON       | Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to hide reply keyboard or to force a reply from the user.
 
+`replyMarkup` example:
+```json
+{
+	keyboard: [
+  		['RapidAPI ❤']]
+}
 
 ## Telegram.sendContact
 Send a contact.
@@ -181,6 +230,12 @@ Send a contact.
 | replyToMessageId   | String     | If the message is a reply, ID of the original message
 | replyMarkup        | JSON       | Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to hide reply keyboard or to force a reply from the user.
 
+`replyMarkup` example:
+```json
+{
+	keyboard: [
+  		['RapidAPI ❤']]
+}
 
 ## Telegram.sendChatAction
 Send a chat action.
@@ -292,6 +347,12 @@ Use this method to edit text and game messages sent by the bot or via the bot (f
 | disableWebPagePreview| JSON       | Disables link previews for links in this message.
 | replyMarkup          | JSON       | A JSON-serialized object for an inline keyboard.
 
+`replyMarkup` example:
+```json
+{
+	keyboard: [
+  		['RapidAPI ❤']]
+}
 
 ## Telegram.editMessageCaption
 Use this method to edit captions of messages sent by the bot or via the bot (for inline bots). On success, if edited message is sent by the bot, the edited Message is returned, otherwise True is returned.
@@ -305,6 +366,12 @@ Use this method to edit captions of messages sent by the bot or via the bot (for
 | caption        | String     | New caption of the message
 | replyMarkup    | JSON       | A JSON-serialized object for an inline keyboard.
 
+`replyMarkup` example:
+```json
+{
+	keyboard: [
+  		['RapidAPI ❤']]
+}
 
 ## Telegram.sendGame
 Use this method to send a game. On success, the sent Message is returned.
@@ -318,6 +385,12 @@ Use this method to send a game. On success, the sent Message is returned.
 | replyToMessageId   | Number     | If the message is a reply, ID of the original message.
 | replyMarkup        | JSON       | Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard,  instructions to hide reply keyboard or to force a reply from the user.
 
+`replyMarkup` example:
+```json
+{
+	keyboard: [
+  		['RapidAPI ❤']]
+}
 
 ## Telegram.getGameHighScores
 Use this method to get data for high score tables. Will return the score of the specified user and several of his neighbors in a game. On success, returns an Array of GameHighScore objects.
