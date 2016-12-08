@@ -9,7 +9,10 @@ module.exports = (req, res) => {
         limit
     } = req.body.args;
 
-    if(!token || !userId) throw new Error('Required fields: token, userId');
+    let required = lib.parseReq({token, userId});
+
+    if(required.length > 0) 
+        throw new RapidError('REQUIRED_FIELDS', required)
 
     let bot = new TelegramBot(token);
 

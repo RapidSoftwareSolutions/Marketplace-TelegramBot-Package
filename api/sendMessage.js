@@ -12,8 +12,19 @@ module.exports = (req, res) => {
         replyToMessageId,
         replyMarkup
     } = req.body.args;
+    
+    let required = lib.parseReq({token, chatId, text});
 
-    if(!token || !chatId || !text) throw new Error('Required fields: token, chatId, text');
+    if(required.length > 0) 
+        throw new RapidError('REQUIRED_FIELDS', required)
+
+    if(replyMarkup && typeof replyMarkup == 'string') {
+        try {
+            replyMarkup = JSON.parse(replyMarkup);
+        } catch(e) {
+            throw new RapidError('JSON_VALIDATION');
+        }   
+    }
 
     let bot     = new TelegramBot(token);
     let options = lib.clearArgs({

@@ -13,8 +13,10 @@ module.exports = (req, res) => {
         messageId
     } = req.body.args;
 
-    if(!token || !chatId || !fromChatId || !messageId) 
-        throw new Error('Required fields: token, chatId, fromChatId, messageId');
+    let required = lib.parseReq({token, chatId, fromChatId, messageId});
+
+    if(required.length > 0) 
+        throw new RapidError('REQUIRED_FIELDS', required)
 
     let uri  = `https://api.telegram.org/bot${token}/forwardMessage?chat_id=${chatId}&from_chat_id=${fromChatId}&message_id=${messageId}`;
     if(disableNotification) 

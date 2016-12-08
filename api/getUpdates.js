@@ -11,7 +11,10 @@ module.exports = (req, res) => {
         offset
     } = req.body.args;
 
-    if(!token) throw new Error('Required fields: token');
+    let required = lib.parseReq({token});
+
+    if(required.length > 0) 
+        throw new RapidError('REQUIRED_FIELDS', required)
 
     let bot = new TelegramBot(token);
     return bot.getUpdates(timeout, limit, offset);

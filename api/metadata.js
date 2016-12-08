@@ -18,12 +18,14 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token.",
+                    info: "Required: Authentication token.",
+                    required: true
                 },
                 {
                     name: "url",
                     type: "String",
-                    info: "HTTPS url to send updates to. Use an empty string to remove webhook integration"
+                    info: "HTTPS url to send updates to. Use an empty string to remove webhook integration",
+                    required: false
                 },
             ],
             'callbacks':[
@@ -43,7 +45,8 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token",
+                    info: "Required: Authentication token.",
+                    required: true,
                 },
             ],
             'callbacks':[
@@ -63,22 +66,26 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token",
+                    info: "Required: Authentication token.",
+                    required: true,
                 },
                 {
                     name: "offset",
                     type: "Number",
                     info: "Identifier of the first update to be returned. Must be greater by one than the highest among the identifiers of previouslyreceived updates. By default, updates starting with the earliest unconfirmed update are returned. An update is considered confirmed as soon as getUpdates is called with an offset higher than its update_id. The negative offset can be specified to retrieve updates starting from -offset update from the end of the updates queue. All previous updates will forgotten.",
+                    required: false,
                 },
                 {
                     name: "limit",
                     type: "Number",
                     info: "Limits the number of updates to be retrieved. Values between 1—100 are accepted. Defaults to 100.",
+                    required: false,
                 },
                 {
                     name: "timeout",
                     type: "Number",
                     info: "Timeout in seconds for long polling.",
+                    required: false,
                 },
             ],
             'callbacks':[
@@ -98,42 +105,50 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token",
+                    info: "Required: Authentication token.",
+                    required: true,
                 },
                 {
                     name: "chatId",
                     type: "String",
-                    info: "Unique identifier for the target chat or username of the target channel (in the format @channelusername)"
+                    info: "Required: Unique identifier for the target chat or username of the target channel (in the format @channelusername)",
+                    required: true
                 },
                 {
                     name: "text",
                     type: "String",
-                    info: "Text of the message to be sent"
+                    info: "Required: Text of the message to be sent",
+                    required: true
                 },
                 {
                     name: "parseMode",
                     type: "String",
                     info: "Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs  in your bot's message.",
+                    required: false,
                 },
                 {
                     name: "disableWebPagePreview",
                     type: "String", //Boolean
                     info: "Disables link previews for links in this message",
+                    required: false,
                 },
                 {
                     name: "disableNotification",
                     type: "String", //Boolean
                     info: "Sends the message silently.",
+                    required: false,
                 },
                 {
                     name: "replyToMessageId",
                     type: "Number",
                     info: "If the message is a reply, ID of the original message.",
+                    required: false,
                 },
                 {
                     name: "replyMarkup",
                     type: "JSON",
                     info: "Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard,  instructions to hide reply keyboard or to force a reply from the user.",
+                    required: false,
                 },
             ],
             'callbacks':[
@@ -153,27 +168,32 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token",
+                    info: "Required: Authentication token.",
+                    required: true,
                 },
                 {
                     name: "chatId",
                     type: "String",
-                    info: "Unique identifier for the target chat or username of the target channel (in the format @channelusername)"
+                    info: "Required: Unique identifier for the target chat or username of the target channel (in the format @channelusername)",
+                    required: true
                 },
                 {
                     name: "fromChatId",
                     type: "String",
-                    info: "Unique identifier for the chat where the original message was sent (or channel username in the format @channelusername)"
-                },
-                {
-                    name: "disableNotification",
-                    type: "String", //Boolean
-                    info: "Unique identifier for the chat where the original message was sent (or channel username in the format @channelusername)"
+                    info: "Required: Unique identifier for the chat where the original message was sent (or channel username in the format @channelusername)",
+                    required: true
                 },
                 {
                     name: "messageId",
                     type: "Number",
-                    info: "Unique message identifier"
+                    info: "Required: Unique message identifier",
+                    required: true
+                },
+                {
+                    name: "disableNotification",
+                    type: "String", //Boolean
+                    info: "Unique identifier for the chat where the original message was sent (or channel username in the format @channelusername)",
+                    required: false
                 }
             ],
             'callbacks':[
@@ -193,37 +213,44 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token",
+                    info: "Required: Authentication token",
+                    required: true,
                 },
                 {
                     name: "chatId",
                     type: "String",
-                    info: "Unique identifier for the target chat or username of the target channel (in the format @channelusername)"
+                    info: "Required: Unique identifier for the target chat or username of the target channel (in the format @channelusername)",
+                    required: true
                 },
                 {
                     name: "photo",
                     type: "String",
-                    info: "Photo to send. Pass a file_id as String to send a photo that exists on the Telegram servers (recommended), pass an HTTP URL as a String for Telegram to get a photo from the Internet, or upload a new photo using multipart/form-data."
+                    info: "Required: Photo to send. Pass a file_id as String to send a photo that exists on the Telegram servers (recommended), pass an HTTP URL as a String for Telegram to get a photo from the Internet, or upload a new photo using multipart/form-data.",
+                    required: true
                 },
                 {
                     name: "caption",
                     type: "String",
-                    info: "Photo caption (may also be used when resending photos by file_id), 0-200 characters"
+                    info: "Photo caption (may also be used when resending photos by file_id), 0-200 characters",
+                    required: false
                 },
                 {
                     name: "disableNotification",
                     type: "Number", //Boolean
-                    info: "Sends the message silently. "
+                    info: "Sends the message silently. ",
+                    required: false
                 },
                 {
                     name: "replyToMessageId",
                     type: "Number",
-                    info: "If the message is a reply, ID of the original message"
+                    info: "If the message is a reply, ID of the original message",
+                    required: false
                 },
                 {
                     name: "replyMarkup",
                     type: "JSON",
-                    info: "Additional interface options.  A JSON-serialized object for an inline keyboard, custom reply keyboard,  instructions to hide reply keyboard or to force a reply from the user."
+                    info: "Additional interface options.  A JSON-serialized object for an inline keyboard, custom reply keyboard,  instructions to hide reply keyboard or to force a reply from the user.",
+                    required: false
                 }
             ],
             'callbacks':[
@@ -243,37 +270,44 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token",
+                    info: "Required: Authentication token.",
+                    required: true,
                 },
                 {
                     name: "chatId",
                     type: "String",
-                    info: "Unique identifier for the target chat or username of the target channel (in the format @channelusername)"
+                    info: "Required: Unique identifier for the target chat or username of the target channel (in the format @channelusername)",
+                    required: true
                 },
                 {
                     name: "file",
                     type: "String",
-                    info: "File to send. Pass a file_id as String to send a file that exists on the Telegram servers (recommended), pass an HTTP URL as a String for Telegram to get a file from the Internet, or upload a new file using multipart/form-data."
+                    info: "Required: File to send. Pass a file_id as String to send a file that exists on the Telegram servers (recommended), pass an HTTP URL as a String for Telegram to get a file from the Internet, or upload a new file using multipart/form-data.",
+                    required: true
                 },
                 {
                     name: "caption",
                     type: "String",
-                    info: "File caption (may also be used when resending files by file_id), 0-200 characters"
+                    info: "File caption (may also be used when resending files by file_id), 0-200 characters",
+                    required: false
                 },
                 {
                     name: "disableNotification",
                     type: "Number", //Boolean
-                    info: "Sends the message silently. "
+                    info: "Sends the message silently. ",
+                    required: false
                 },
                 {
                     name: "replyToMessageId",
                     type: "Number",
-                    info: "If the message is a reply, ID of the original message"
+                    info: "If the message is a reply, ID of the original message",
+                    required: false
                 },
                 {
                     name: "replyMarkup",
                     type: "JSON",
-                    info: "Additional interface options.  A JSON-serialized object for an inline keyboard, custom reply keyboard,  instructions to hide reply keyboard or to force a reply from the user."
+                    info: "Additional interface options.  A JSON-serialized object for an inline keyboard, custom reply keyboard,  instructions to hide reply keyboard or to force a reply from the user.",
+                    required: false
                 }
             ],
             'callbacks':[
@@ -293,37 +327,44 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token",
+                    info: "Required: Authentication token.",
+                    required: true,
                 },
                 {
                     name: "chatId",
                     type: "String",
-                    info: "Unique identifier for the target chat or username of the target channel (in the format @channelusername)"
+                    info: "Required: Unique identifier for the target chat or username of the target channel (in the format @channelusername)",
+                    required: true
                 },
                 {
                     name: "sticker",
                     type: "String",
-                    info: "Sticker to send. Pass a file_id as String to send a file that exists on the Telegram servers (recommended), pass an HTTP URL as a String for Telegram to get a .webp file from the Internet, or upload a new  one using multipart/form-data."
+                    info: "Required: Sticker to send. Pass a file_id as String to send a file that exists on the Telegram servers (recommended), pass an HTTP URL as a String for Telegram to get a .webp file from the Internet, or upload a new  one using multipart/form-data.",
+                    required: true
                 },
                 {
                     name: "caption",
                     type: "String",
-                    info: "sticker caption (may also be used when resending stickers by file_id), 0-200 characters"
+                    info: "sticker caption (may also be used when resending stickers by file_id), 0-200 characters",
+                    required: false
                 },
                 {
                     name: "disableNotification",
                     type: "Number", //Boolean
-                    info: "Sends the message silently. "
+                    info: "Sends the message silently. ",
+                    required: false
                 },
                 {
                     name: "replyToMessageId",
                     type: "Number",
-                    info: "If the message is a reply, ID of the original message"
+                    info: "If the message is a reply, ID of the original message",
+                    required: false
                 },
                 {
                     name: "replyMarkup",
                     type: "JSON",
-                    info: "Additional interface options.  A JSON-serialized object for an inline keyboard, custom reply keyboard,  instructions to hide reply keyboard or to force a reply from the user."
+                    info: "Additional interface options.  A JSON-serialized object for an inline keyboard, custom reply keyboard,  instructions to hide reply keyboard or to force a reply from the user.",
+                    required: false
                 }
             ],
             'callbacks':[
@@ -343,52 +384,62 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token",
+                    info: "Required: Authentication token.",
+                    required: true,
                 },
                 {
                     name: "chatId",
                     type: "String",
-                    info: "Unique identifier for the target chat or username of the target channel (in the format @channelusername)"
+                    info: "Required: Unique identifier for the target chat or username of the target channel (in the format @channelusername)",
+                    required: true
                 },
                 {
                     name: "audio",
                     type: "String",
-                    info: "Audio file to send. Pass a file_id as String to send an audio file that exists on the Telegram servers (recommended), pass an HTTP URL as a String for Telegram to get an audio file from the Internet, or upload a new one using multipart/form-data."
+                    info: "Required: Audio file to send. Pass a file_id as String to send an audio file that exists on the Telegram servers (recommended), pass an HTTP URL as a String for Telegram to get an audio file from the Internet, or upload a new one using multipart/form-data.",
+                    required: true
                 },
                 {
                     name: "caption",
                     type: "String",
-                    info: "Audio caption (may also be used when resending audios by file_id), 0-200 characters"
+                    info: "Audio caption (may also be used when resending audios by file_id), 0-200 characters",
+                    required: false
                 },
                 {
                     name: "duration",
                     type: "String",
-                    info: "Duration of the audio in seconds"
+                    info: "Duration of the audio in seconds",
+                    required: false
                 },
                 {
                     name: "performer",
                     type: "String",
-                    info: "Performer"
+                    info: "Performer",
+                    required: false
                 },
                 {
                     name: "title",
                     type: "String",
-                    info: "Track name"
+                    info: "Track name",
+                    required: false
                 },
                 {
                     name: "disableNotification",
                     type: "Number", //Boolean
-                    info: "Sends the message silently. "
+                    info: "Sends the message silently. ",
+                    required: false
                 },
                 {
                     name: "replyToMessageId",
                     type: "Number",
-                    info: "If the message is a reply, ID of the original message"
+                    info: "If the message is a reply, ID of the original message",
+                    required: false
                 },
                 {
                     name: "replyMarkup",
                     type: "JSON",
-                    info: "Additional interface options.  A JSON-serialized object for an inline keyboard, custom reply keyboard,  instructions to hide reply keyboard or to force a reply from the user."
+                    info: "Additional interface options.  A JSON-serialized object for an inline keyboard, custom reply keyboard,  instructions to hide reply keyboard or to force a reply from the user.",
+                    required: false
                 }
             ],
             'callbacks':[
@@ -408,57 +459,68 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token",
+                    info: "Required: Authentication token.",
+                    required: true,
                 },
                 {
                     name: "chatId",
                     type: "String",
-                    info: "Unique identifier for the target chat or username of the target channel (in the format @channelusername)"
+                    info: "Required: Unique identifier for the target chat or username of the target channel (in the format @channelusername)",
+                    required: true
                 },
                 {
                     name: "video",
                     type: "String",
-                    info: "Video to send. Pass a file_id as String to send a video that exists on the Telegram servers (recommended), pass an HTTP URL as a String for Telegram to get a video from the Internet, or upload a new video using multipart/form-data."
+                    info: "Required: Video to send. Pass a file_id as String to send a video that exists on the Telegram servers (recommended), pass an HTTP URL as a String for Telegram to get a video from the Internet, or upload a new video using multipart/form-data.",
+                    required: true
                 },
                 {
                     name: "duration",
                     type: "Number",
-                    info: "Duration of sent video in seconds"
+                    info: "Duration of sent video in seconds",
+                    required: false
                 },
                 {
                     name: "width",
                     type: "Number",
-                    info: "Video width"
+                    info: "Video width",
+                    required: false
                 },
                 {
                     name: "height",
                     type: "Number",
-                    info: "Video height"
+                    info: "Video height",
+                    required: false
                 },
                 {
                     name: "caption",
                     type: "Number",
-                    info: "Video height"
+                    info: "Video height",
+                    required: false
                 },
                 {
                     name: "caption",
                     type: "String",
-                    info: "Video caption (may also be used when resending videos by file_id), 0-200 characters"
+                    info: "Video caption (may also be used when resending videos by file_id), 0-200 characters",
+                    required: false
                 },
                 {
                     name: "disableNotification",
                     type: "Number", //Boolean
-                    info: "Sends the message silently. "
+                    info: "Sends the message silently. ",
+                    required: false
                 },
                 {
                     name: "replyToMessageId",
                     type: "Number",
-                    info: "If the message is a reply, ID of the original message"
+                    info: "If the message is a reply, ID of the original message",
+                    required: false
                 },
                 {
                     name: "replyMarkup",
                     type: "JSON",
-                    info: "Additional interface options.  A JSON-serialized object for an inline keyboard, custom reply keyboard,  instructions to hide reply keyboard or to force a reply from the user."
+                    info: "Additional interface options.  A JSON-serialized object for an inline keyboard, custom reply keyboard,  instructions to hide reply keyboard or to force a reply from the user.",
+                    required: false
                 }
             ],
             'callbacks':[
@@ -478,42 +540,50 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token",
+                    info: "Required: Authentication token.",
+                    required: true,
                 },
                 {
                     name: "chatId",
                     type: "String",
-                    info: "Unique identifier for the target chat or username of the target channel (in the format @channelusername)"
+                    info: "Required: Unique identifier for the target chat or username of the target channel (in the format @channelusername)",
+                    required: true
                 },
                 {
                     name: "voice",
                     type: "String",
-                    info: "Audio file to send. Pass a file_id as String to send a file that exists on the Telegram servers (recommended), pass an HTTP URL as a String for Telegram to get a file from the Internet, or upload a new one using multipart/form-data."
+                    info: "Required: Audio file to send. Pass a file_id as String to send a file that exists on the Telegram servers (recommended), pass an HTTP URL as a String for Telegram to get a file from the Internet, or upload a new one using multipart/form-data.",
+                    required: true
                 },
                 {
                     name: "caption",
                     type: "String",
-                    info: "Voice caption (may also be used when resending voices by file_id), 0-200 characters"
+                    info: "Voice caption (may also be used when resending voices by file_id), 0-200 characters",
+                    required: false
                 },
                 {
                     name: "duration",
                     type: "String",
-                    info: "Duration of the audio in seconds"
+                    info: "Duration of the audio in seconds",
+                    required: false
                 },
                 {
                     name: "disableNotification",
                     type: "Number", //Boolean
-                    info: "Sends the message silently. "
+                    info: "Sends the message silently. ",
+                    required: false
                 },
                 {
                     name: "replyToMessageId",
                     type: "Number",
-                    info: "If the message is a reply, ID of the original message"
+                    info: "If the message is a reply, ID of the original message",
+                    required: false
                 },
                 {
                     name: "replyMarkup",
                     type: "JSON",
-                    info: "Additional interface options.  A JSON-serialized object for an inline keyboard, custom reply keyboard,  instructions to hide reply keyboard or to force a reply from the user."
+                    info: "Additional interface options.  A JSON-serialized object for an inline keyboard, custom reply keyboard,  instructions to hide reply keyboard or to force a reply from the user.",
+                    required: false
                 }
             ],
             'callbacks':[
@@ -533,37 +603,44 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token",
+                    info: "Required: Authentication token.",
+                    required: true,
                 },
                 {
                     name: "chatId",
                     type: "String",
-                    info: "Unique identifier for the target chat or username of the target channel (in the format @channelusername)"
+                    info: "Required: Unique identifier for the target chat or username of the target channel (in the format @channelusername)",
+                    required: true
                 },
                 {
                     name: "latitude",
                     type: "String", //Float
-                    info: "Latitude of location"   
+                    info: "Required: Latitude of location",
+                    required: true   
                 },
                 {
                     name: "longitude",
                     type: "String", //Float
-                    info: "Longitude of location"   
+                    info: "Required: Longitude of location",
+                    required: true   
                 },
                 {
                     name: "disableNotification",
                     type: "String", //Boolean
-                    info: "Sends the message silently."   
+                    info: "Sends the message silently.",
+                    required: false   
                 },
                 {
                     name: "replyToMessageId",
                     type: "String",
-                    info: "If the message is a reply, ID of the original message"   
+                    info: "If the message is a reply, ID of the original message",
+                    required: false   
                 },
                 {
                     name: "replyMarkup",
                     type: "JSON",
-                    info: "Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to hide reply keyboard or to force a reply from the user."   
+                    info: "Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to hide reply keyboard or to force a reply from the user.",
+                    required: false   
                 }
             ],
             'callbacks':[
@@ -583,42 +660,50 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token",
+                    info: "Required: Authentication token.",
+                    required: true,
                 },
                 {
                     name: "chatId",
                     type: "String",
-                    info: "Unique identifier for the target chat or username of the target channel (in the format @channelusername)"
+                    info: "Required: Unique identifier for the target chat or username of the target channel (in the format @channelusername)",
+                    required: true
                 },
                 {
                     name: "phoneNumber",
                     type: "String",
-                    info: "Contact's phone number"   
+                    info: "Required: Contact's phone number",
+                    required: true   
                 },
                 {
                     name: "firstName",
                     type: "String",
-                    info: "Contact's first name"   
+                    info: "Required: Contact's first name",
+                    required: true   
                 },
                 {
                     name: "lastName",
                     type: "String",
-                    info: "Contact's last name"   
+                    info: "Contact's last name",
+                    required: false   
                 },
                 {
                     name: "disableNotification",
                     type: "String",
-                    info: "Sends the message silently."   
+                    info: "Sends the message silently.",
+                    required: false   
                 },
                 {
                     name: "replyToMessageId",
                     type: "String",
-                    info: "If the message is a reply, ID of the original message"   
+                    info: "If the message is a reply, ID of the original message",
+                    required: false   
                 },
                 {
                     name: "replyMarkup",
                     type: "JSON",
-                    info: "Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to hide reply keyboard or to force a reply from the user."   
+                    info: "Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to hide reply keyboard or to force a reply from the user.",
+                    required: false   
                 }
             ],
             'callbacks':[
@@ -638,17 +723,20 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token",
+                    info: "Required: Authentication token.",
+                    required: true,
                 },
                 {
                     name: "chatId",
                     type: "String",
-                    info: "Unique identifier for the target chat or username of the target channel (in the format @channelusername)"
+                    info: "Required: Unique identifier for the target chat or username of the target channel (in the format @channelusername)",
+                    required: true
                 },
                 {
                     name: "action",
                     type: "String",
-                    info: "Type of action to broadcast. Choose one, depending on what the user is about to receive: typing for text messages, upload_photo for photos, record_video or uploadVideo for videos, record_audio or upload_audio for audio files, upload_document for general files, find_location for location data"   
+                    info: "Required: Type of action to broadcast. Choose one, depending on what the user is about to receive: typing for text messages, upload_photo for photos, record_video or uploadVideo for videos, record_audio or upload_audio for audio files, upload_document for general files, find_location for location data",
+                    required: true   
                 },
             ],
             'callbacks':[
@@ -668,22 +756,26 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token",
+                    info: "Required: Authentication token.",
+                    required: true,
                 },
                 {
                     name: "userId",
                     type: "String",
-                    info: "Unique identifier of the target user"
+                    info: "Required: Unique identifier of the target user",
+                    required: true
                 },
                 {
                     name: "offset",
                     type: "String",
-                    info: "Sequential number of the first photo to be returned. By default, all photos are returned."
+                    info: "Sequential number of the first photo to be returned. By default, all photos are returned.",
+                    required: false
                 },
                 {
                     name: "limit",
                     type: "String",
-                    info: "Limits the number of photos to be retrieved. Values between 1—100 are accepted. Defaults to 100."
+                    info: "Limits the number of photos to be retrieved. Values between 1—100 are accepted. Defaults to 100.",
+                    required: false
                 },
             ],
             'callbacks':[
@@ -703,12 +795,14 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token",
+                    info: "Required: Authentication token.",
+                    required: true,
                 },
                 {
                     name: "fileId",
                     type: "String",
-                    info: "File identifier to get info about"
+                    info: "Required: File identifier to get info about",
+                    required: true
                 }
             ],
             'callbacks':[
@@ -723,22 +817,25 @@ module.exports.do = function(req, res){
             ]
         }, {
             "name":"kickChatMember",
-            // desciption: "Use this method to kick a user from a group or a supergroup. In the case of supergroups, the user will not be able to return to the group on their own using invite links, etc., unless unbanned first. The bot must be an administrator in the group for this to work. Returns True on success.",
+            "description": "Use this method to kick a user from a group or a supergroup. In the case of supergroups, the user will not be able to return to the group on their own using invite links, etc., unless unbanned first. The bot must be an administrator in the group for this to work. Returns True on success.",
             "args":[
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token",
+                    info: "Required: Authentication token.",
+                    required: true,
                 },
                 {
                     name: "chatId",
                     type: "String",
-                    info: "Unique identifier for the target group or username of the target supergroup (in the format @supergroupusername)"
+                    info: "Required: Unique identifier for the target group or username of the target supergroup (in the format @supergroupusername)",
+                    required: true
                 },
                 {
                     name: "userId",
                     type: "String",
-                    info: "Unique identifier of the target user"
+                    info: "Required: Unique identifier of the target user",
+                    required: true
                 }
             ],
             'callbacks':[
@@ -753,17 +850,19 @@ module.exports.do = function(req, res){
             ]
         }, {
             "name":"leaveChat",
-            //desciption: "Use this method to kick a user from a group or a supergroup. In the case of supergroups, the user will not be able to return to the group on their own using invite links, etc., unless unbanned first. The bot must be an administrator in the group for this to work. Returns True on success.",
+            "description": "Use this method for your bot to leave a group, supergroup or channel. Returns True on success.",
             "args":[
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token",
+                    info: "Required: Authentication token.",
+                    required: true,
                 },
                 {
                     name: "chatId",
                     type: "String",
-                    info: "Unique identifier for the target group or username of the target supergroup (in the format @supergroupusername)"
+                    info: "Required: Unique identifier for the target group or username of the target supergroup (in the format @supergroupusername)",
+                    required: true
                 }
             ],
             'callbacks':[
@@ -783,47 +882,20 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token",
+                    info: "Required: Authentication token.",
+                    required: true,
                 },
                 {
                     name: "chatId",
                     type: "String",
-                    info: "Unique identifier for the target group or username of the target supergroup (in the format @supergroupusername)"
+                    info: "Required: Unique identifier for the target group or username of the target supergroup (in the format @supergroupusername)",
+                    required: true
                 },
                 {
                     name: "userId",
                     type: "String",
-                    info: "Unique identifier of the target user"
-                }
-            ],
-            'callbacks':[
-                {
-                    'name':'error',
-                    'info': 'Error'
-                },
-                {
-                    'name':'success',
-                    'info': 'Success'
-                }
-            ]
-        }, {
-            "name":"unbanChatMember",
-            "description": "Use this method to unban a previously kicked user in a supergroup. The user will not return to the group automatically, but will be able to join via link, etc. The bot must be an administrator in the group for this to work.",
-            "args":[
-                {
-                    name: "token",
-                    type: "credentials",
-                    info: "Authentication token",
-                },
-                {
-                    name: "chatId",
-                    type: "String",
-                    info: "Unique identifier for the target group or username of the target supergroup (in the format @supergroupusername)"
-                },
-                {
-                    name: "userId",
-                    type: "String",
-                    info: "Unique identifier of the target user"
+                    info: "Required: Unique identifier of the target user",
+                    required: true
                 }
             ],
             'callbacks':[
@@ -838,17 +910,19 @@ module.exports.do = function(req, res){
             ]
         }, {
             "name":"getChat",
-            //"desctiption ": "Use this method to get up to date information about the chat (current name of the user for one-on-one conversations, currentusername of a user, group or channel, etc.)."
+            "description": "Use this method to get up to date information about the chat (current name of the user for one-on-one conversations, current username of a user, group or channel, etc.). Returns a Chat object on success.",
             "args":[
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token",
+                    info: "Required: Authentication token.",
+                    required: true,
                 },
                 {
                     name: "chatId",
                     type: "String",
-                    info: "Unique identifier for the target group or username of the target supergroup (in the format @supergroupusername)"
+                    info: "Required: Unique identifier for the target group or username of the target supergroup (in the format @supergroupusername)",
+                    required: true
                 }
             ],
             'callbacks':[
@@ -868,12 +942,14 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token",
+                    info: "Required: Authentication token.",
+                    required: true,
                 },
                 {
                     name: "chatId",
                     type: "String",
-                    info: "Unique identifier for the target group or username of the target supergroup (in the format @supergroupusername)"
+                    info: "Required: Unique identifier for the target group or username of the target supergroup (in the format @supergroupusername)",
+                    required: true
                 }
             ],
             'callbacks':[
@@ -893,12 +969,14 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token",
+                    info: "Required: Authentication token.",
+                    required: true,
                 },
                 {
                     name: "chatId",
                     type: "String",
-                    info: "Unique identifier for the target group or username of the target supergroup (in the format @supergroupusername)"
+                    info: "Required: Unique identifier for the target group or username of the target supergroup (in the format @supergroupusername)",
+                    required: true
                 }
             ],
             'callbacks':[
@@ -918,17 +996,20 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token",
+                    info: "Required: Authentication token.",
+                    required: true,
                 },
                 {
                     name: "chatId",
                     type: "String",
-                    info: "Unique identifier for the target group or username of the target supergroup (in the format @supergroupusername)"
+                    info: "Required: Unique identifier for the target group or username of the target supergroup (in the format @supergroupusername)",
+                    required: true
                 },
                 {
                     name: "userId",
                     type: "String",
-                    info: "Unique identifier of the target member."
+                    info: "Required: Unique identifier of the target member.",
+                    required: true
                 }
             ],
             'callbacks':[
@@ -948,27 +1029,32 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token",
+                    info: "Required: Authentication token.",
+                    required: true,
                 },
                 {
                     name: "callbackQueryId",
                     type: "String",
-                    info: "Unique identifier for the query to be answered."
+                    info: "Unique identifier for the query to be answered.",
+                    required: false
                 },
                 {
                     name: "text",
                     type: "String",
-                    info: "If true, an alert will be shown by the client instead of a notification at the top of the chat screen. Defaults to false."
+                    info: "If true, an alert will be shown by the client instead of a notification at the top of the chat screen. Defaults to false.",
+                    required: false
                 },
                 {
                     name: "showAlert",
                     type: "String", //Boolean
-                    info: "If true, an alert will be shown by the client instead of a notification at the top of the chat screen. Defaults to false."
+                    info: "If true, an alert will be shown by the client instead of a notification at the top of the chat screen. Defaults to false.",
+                    required: false
                 },
                 {
                     name: "url",
                     type: "String",
-                    info: "URL that will be opened by the user's client. If you have created a Game and accepted the conditions via @Botfather, specify the URL that opens your game – note that this will only work if the query comes from a callback_game button. Otherwise, you may use links like telegram.me/your_bot?start=XXXX that open your bot with a parameter."
+                    info: "URL that will be opened by the user's client. If you have created a Game and accepted the conditions via @Botfather, specify the URL that opens your game – note that this will only work if the query comes from a callback_game button. Otherwise, you may use links like telegram.me/your_bot?start=XXXX that open your bot with a parameter.",
+                    required: false
                 }
             ],
             'callbacks':[
@@ -988,42 +1074,50 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token",
+                    info: "Required: Authentication token.",
+                    required: true,
                 },
                 {
                     name: "chatId",
                     type: "String",
-                    info: "Unique identifier for the target group or username of the target supergroup (in the format @supergroupusername)"
+                    info: "Unique identifier for the target group or username of the target supergroup (in the format @supergroupusername)",
+                    required: false
                 },
                 {
                     name: "messageId",
                     type: "Number",
-                    info: "Required if inline_message_id is not specified. Unique identifier of the sent message"
+                    info: "Required if inline_message_id is not specified. Unique identifier of the sent message",
+                    required: false
                 },
                 {
                     name: "text",
                     type: "String",
-                    info: " Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in your bot's message."
+                    info: " Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in your bot's message.",
+                    required: false
                 },
                 {
                     name: "parseMode",
                     type: "String",
-                    info: "New text of the message."
+                    info: "New text of the message.",
+                    required: false
                 },
                 {
                     name: "parseMode",
                     type: "String",
-                    info: "New text of the message."
+                    info: "New text of the message.",
+                    required: false
                 },
                 {
                     name: "disableWebPagePreview",
                     type: "JSON",
-                    info: "Disables link previews for links in this message."
+                    info: "Disables link previews for links in this message.",
+                    required: false
                 },
                 {
                     name: "replyMarkup",
                     type: "JSON",
-                    info: "A JSON-serialized object for an inline keyboard."
+                    info: "A JSON-serialized object for an inline keyboard.",
+                    required: false
                 }
             ],
             'callbacks':[
@@ -1043,32 +1137,38 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token",
+                    info: "Required: Authentication token.",
+                    required: true,
                 },
                 {
                     name: "chatId",
                     type: "String",
-                    info: "Unique identifier for the target group or username of the target supergroup (in the format @supergroupusername)"
+                    info: "Unique identifier for the target group or username of the target supergroup (in the format @supergroupusername)",
+                    required: false
                 },
                 {
                     name: "messageId",
                     type: "Number",
-                    info: "Required if inline_message_id is not specified. Unique identifier of the sent message"
+                    info: "Required if inline_message_id is not specified. Unique identifier of the sent message",
+                    required: false
                 },
                 {
                     name: "inlineMessageId",
                     type: "String",
-                    info: "Required if chat_id and message_id are not specified. Identifier of the inline message"
+                    info: "Required if chat_id and message_id are not specified. Identifier of the inline message",
+                    required: false
                 },
                 {
                     name: "caption",
                     type: "String",
-                    info: "New caption of the message"
+                    info: "New caption of the message",
+                    required: false
                 },
                 {
                     name: "replyMarkup",
                     type: "JSON",
-                    info: "A JSON-serialized object for an inline keyboard."
+                    info: "A JSON-serialized object for an inline keyboard.",
+                    required: false
                 }
 
             ],
@@ -1089,27 +1189,32 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token",
+                    info: "Required: Authentication token.",
+                    required: true,
                 },
                 {
                     name: "chatId",
                     type: "String",
-                    info: "Unique identifier for the target group or username of the target supergroup (in the format @supergroupusername)"
+                    info: "Unique identifier for the target group or username of the target supergroup (in the format @supergroupusername)",
+                    required: false
                 },
                 {
                     name: "messageId",
                     type: "Number",
-                    info: "Required if inline_message_id is not specified. Unique identifier of the sent message"
+                    info: "Required if inline_message_id is not specified. Unique identifier of the sent message",
+                    required: false
                 },
                 {
                     name: "inlineMessageId",
                     type: "String",
-                    info: "Required if chat_id and message_id are not specified. Identifier of the inline message"
+                    info: "Required if chat_id and message_id are not specified. Identifier of the inline message",
+                    required: false
                 },
                 {
                     name: "replyMarkup",
                     type: "JSON",
-                    info: "A JSON-serialized object for an inline keyboard."
+                    info: "A JSON-serialized object for an inline keyboard.",
+                    required: false
                 }
 
             ],
@@ -1130,42 +1235,50 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token",
+                    info: "Required: Authentication token.",
+                    required: true,
                 },
                 {
                     name: "inlineQueryId",
                     type: "String",
-                    info: "Unique identifier for the answered query"
+                    info: "Unique identifier for the answered query",
+                    required: false
                 },
                 {
                     name: "results",
                     type: "JSON",
-                    info: "A JSON-serialized array of results for the inline query"
+                    info: "A JSON-serialized array of results for the inline query",
+                    required: false
                 },
                 {
                     name: "cacheTime",
                     type: "String",
-                    info: "The maximum amount of time in seconds that the result of the inline query may be cached on the server. Defaults to 300."
+                    info: "The maximum amount of time in seconds that the result of the inline query may be cached on the server. Defaults to 300.",
+                    required: false
                 },
                 {
                     name: "isPersonal",
                     type: "String", // Boolean
-                    info: "Pass True, if results may be cached on the server side only for the user that sent the query. By default, results may be returned to any user who sends the same query"
+                    info: "Pass True, if results may be cached on the server side only for the user that sent the query. By default, results may be returned to any user who sends the same query",
+                    required: false
                 },
                 {
                     name: "nextOffset",
                     type: "String",
                     info: "Pass the offset that a client should send in the next query with the same text to receive more results. Pass an empty string if there are no more results or if you don‘t support pagination. Offset length can’t exceed 64 bytes.",
+                    required: false,
                 },
                 {
                     name: "switchPmText",
                     type: "String",
                     info: "If passed, clients will display a button with specified text that switches the user to a private chat with the bot and sends the bot a start message with the parameter switch_pm_parameter",
+                    required: false,
                 },
                 {
                     name: "switchPmParameter",
                     type: "String",
                     info: "Parameter for the start message sent to the bot when user presses the switch button",
+                    required: false,
                 }
             ],
             'callbacks':[
@@ -1185,32 +1298,38 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token",
+                    info: "Required: Authentication token.",
+                    required: true,
                 },
                 {
                     name: "chatId",
                     type: "String",
-                    info: "Unique identifier for the target chat or username of the target channel (in the format @channelusername)"
+                    info: "Required: Unique identifier for the target chat or username of the target channel (in the format @channelusername)",
+                    required: true
                 },
                 {
                     name: "gameShortName",
                     type: "String",
-                    info: "Short name of the game, serves as the unique identifier for the game. Set up your games via Botfather."
+                    info: "Required: Short name of the game, serves as the unique identifier for the game. Set up your games via Botfather.",
+                    required: true
                 },
                 {
                     name: "disableNotification",
                     type: "String", //Boolean
                     info: "Sends the message silently.",
+                    required: false,
                 },
                 {
                     name: "replyToMessageId",
                     type: "Number",
                     info: "If the message is a reply, ID of the original message.",
+                    required: false,
                 },
                 {
                     name: "replyMarkup",
                     type: "JSON",
                     info: "Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard,  instructions to hide reply keyboard or to force a reply from the user.",
+                    required: false,
                 },
             ],
             'callbacks':[
@@ -1230,37 +1349,44 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token",
+                    info: "Required: Authentication token.",
+                    required: true,
                 },
                 {
                     name: "chatId",
                     type: "String",
-                    info: "Unique identifier for the target chat or username of the target channel (in the format @channelusername)"
+                    info: "Unique identifier for the target chat or username of the target channel (in the format @channelusername)",
+                    required: false
                 },
                 {
                     name: "userId",
                     type: "Number",
-                    info: "User identifier"
+                    info: "User identifier",
+                    required: false
                 },
                 {
                     name: "score",
                     type: "String",
-                    info: "New score, must be positive"
+                    info: "New score, must be positive",
+                    required: false
                 },
                 {
                     name: "messageId",
                     type: "Number",
-                    info: "Required if inline_message_id is not specified. Unique identifier of the sent message"
+                    info: "Required if inline_message_id is not specified. Unique identifier of the sent message",
+                    required: false
                 },
                 {
                     name: "inlineMessageId",
                     type: "String",
-                    info: "Required if chat_id and message_id are not specified. Identifier of the inline message"
+                    info: "Required if chat_id and message_id are not specified. Identifier of the inline message",
+                    required: false
                 },
                 {
                     name: "editMessage",
                     type: "String", //Boolean
-                    info: "Pass True, if the game message should be automatically edited to include the current scoreboard"
+                    info: "Pass True, if the game message should be automatically edited to include the current scoreboard",
+                    required: false
                 },
             ],
             'callbacks':[
@@ -1275,67 +1401,37 @@ module.exports.do = function(req, res){
             ]
         }, */{
             "name":"getGameHighScores",
-            //"desciption": "Use this method to get data for high score tables. Will return the score of the specified user and several of his neighbors in a game. On success, returns an Array of GameHighScore objects."
+            "description": "Use this method to get data for high score tables. Will return the score of the specified user and several of his neighbors in a game. On success, returns an Array of GameHighScore objects.",
             "args":[
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token",
+                    info: "Required: Authentication token.",
+                    required: true,
                 },
                 {
                     name: "userId",
                     type: "String",
-                    info: "Target user id"
+                    info: "Required: Target user id",
+                    required: true
                 },
                 {
                     name: "chatId",
                     type: "String",
-                    info: "Unique identifier for the target chat or username of the target channel (in the format @channelusername)"
+                    info: "Unique identifier for the target chat or username of the target channel (in the format @channelusername)",
+                    required: false
                 },
                 {
                     name: "messageId",
                     type: "Number",
-                    info: "Required if inline_message_id is not specified. Unique identifier of the sent message"
+                    info: "Required if inline_message_id is not specified. Unique identifier of the sent message",
+                    required: false
                 },
                 {
                     name: "inlineMessageId",
                     type: "String",
-                    info: "Required if chat_id and message_id are not specified. Identifier of the inline message"
-                },
-            ],
-            'callbacks':[
-                {
-                    'name':'error',
-                    'info': 'Error'
-                },
-                {
-                    'name':'success',
-                    'info': 'Success'
-                }
-            ]
-        }, {
-            "name":"getGameHighScores",
-            //"desciption": "Use this method to get data for high score tables. Will return the score of the specified user and several of his neighbors in a game. On success, returns an Array of GameHighScore objects."
-            "args":[
-                {
-                    name: "token",
-                    type: "credentials",
-                    info: "Authentication token",
-                },
-                {
-                    name: "chatId",
-                    type: "String",
-                    info: "Unique identifier for the target chat or username of the target channel (in the format @channelusername)"
-                },
-                {
-                    name: "messageId",
-                    type: "Number",
-                    info: "Required if inline_message_id is not specified. Unique identifier of the sent message"
-                },
-                {
-                    name: "inlineMessageId",
-                    type: "String",
-                    info: "Required if chat_id and message_id are not specified. Identifier of the inline message"
+                    info: "Required if chat_id and message_id are not specified. Identifier of the inline message",
+                    required: false
                 },
             ],
             'callbacks':[
@@ -1355,32 +1451,38 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token",
+                    info: "Required: Authentication token.",
+                    required: true,
                 },
                 {
                     name: "url",
                     type: "String",
-                    info: "Webhook URL, may be empty if webhook is not set up"
+                    info: "Webhook URL, may be empty if webhook is not set up",
+                    required: false
                 },
                 {
                     name: "hasCustomCertificate",
                     type: "String", //Boolean
-                    info: "True, if a custom certificate was provided for webhook certificate checks"
+                    info: "True, if a custom certificate was provided for webhook certificate checks",
+                    required: false
                 },
                 {
                     name: "pendingUpdateCount",
                     type: "Number",
-                    info: "Number of updates awaiting delivery"
+                    info: "Number of updates awaiting delivery",
+                    required: false
                 },
                 {
                     name: "lastErrorDate",
                     type: "Number",
-                    info: "Optional. Unix time for the most recent error that happened when trying to deliver an update via webhook"
+                    info: "Optional. Unix time for the most recent error that happened when trying to deliver an update via webhook",
+                    required: false
                 },
                 {
                     name: "lastErrorMessage",
                     type: "String",
-                    info: "Optional. Error message in human-readable format for the most recent error that happened when trying to deliver an update via webhook"
+                    info: "Optional. Error message in human-readable format for the most recent error that happened when trying to deliver an update via webhook",
+                    required: false
                 }
             ],
             'callbacks':[

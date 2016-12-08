@@ -10,8 +10,10 @@ module.exports = (req, res) => {
         url
     } = req.body.args;
 
-    if(!callbackQueryId) 
-        throw new Error('Required fields: callbackQueryId');
+    let required = lib.parseReq({token, callbackQueryId});
+
+    if(required.length > 0) 
+        throw new RapidError('REQUIRED_FIELDS', required);
 
     let bot = new TelegramBot(token);
 

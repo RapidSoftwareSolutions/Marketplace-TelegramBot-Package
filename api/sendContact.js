@@ -16,8 +16,18 @@ module.exports = (req, res) => {
         replyMarkup
     } = req.body.args;
 
-    if(!token || !chatId || !phoneNumber || !firstName) 
-        throw new Error('Required fields: token, chatId, phoneNumber, firstName');
+    let required = lib.parseReq({token, chatId, phoneNumber, firstName});
+
+    if(required.length > 0) 
+        throw new RapidError('REQUIRED_FIELDS', required);
+
+    if(replyMarkup && typeof replyMarkup == 'string') {
+        try {
+            replyMarkup = JSON.parse(replyMarkup);
+        } catch(e) {
+            throw new RapidError('JSON_VALIDATION');
+        }   
+    }
 
     let options = lib.clearArgs({
         chat_id:              chatId,

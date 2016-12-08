@@ -1,6 +1,23 @@
 'use strict';
 global.PACKAGE_NAME = "TelegramBot";
 
+global.RapidError = function(code, fields) {
+    let messages = {
+        'REQUIRED_FIELDS':        'Please, check and fill in required fields.',
+        'JSON_VALIDATION':        'Syntax error. Incorrect input JSON. Please, check fields with JSON input.',
+        'INTERNAL_PACKAGE_ERROR': 'Something went wrong inside the package.'
+    }
+
+    this.status_code = code;
+    this.status_msg  = messages[code];
+
+    if(code == 'REQUIRED_FIELDS')
+        this.fields  = fields || [];
+}
+
+RapidError.prototype = Object.create(Error.prototype);
+RapidError.prototype.constructor = RapidError;
+
 const express       = require('express');
 const request       = require('request');
 const bodyParser    = require('body-parser');
@@ -30,7 +47,7 @@ for(let route in API) {
             r.contextWrites[to] = response;
         } catch(e) {
             r.callback          = 'error';
-            r.contextWrites[to] = e;
+            r.contextWrites['to'] = e.status_code ? e : { status_code: "API_ERROR", status_msg:  e.message ? e.message : e };
         }
 
         res.status(200).send(r);

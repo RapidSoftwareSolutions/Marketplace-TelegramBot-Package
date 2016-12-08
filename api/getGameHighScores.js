@@ -13,7 +13,10 @@ module.exports = (req, res) => {
         inlineMessageId,
     } = req.body.args;
 
-    if(!token) throw new Error('Required fields: token');
+    let required = lib.parseReq({token, userId});
+
+    if(required.length > 0) 
+        throw new RapidError('REQUIRED_FIELDS', required)
 
     let options = lib.clearArgs({
         user_id:           userId,
@@ -21,8 +24,6 @@ module.exports = (req, res) => {
         message_id:        messageId,
         inline_message_id: inlineMessageId,
     });
-
-    console.log(options);
 
     let uri  = `https://api.telegram.org/bot${token}/getGameHighScores`;
 

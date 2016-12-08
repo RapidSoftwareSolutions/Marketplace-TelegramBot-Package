@@ -9,7 +9,10 @@ module.exports = (req, res) => {
         token,
     } = req.body.args;
 
-    if(!token) throw new Error('Required fields: token');
+    let required = lib.parseReq({token});
+
+    if(required.length > 0) 
+        throw new RapidError('REQUIRED_FIELDS', required)
 
     let uri = `https://api.telegram.org/bot${token}/getWebhookInfo`;
 

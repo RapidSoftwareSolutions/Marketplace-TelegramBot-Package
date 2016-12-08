@@ -12,7 +12,10 @@ module.exports = (req, res) => {
         replyMarkup
     } = req.body.args;
 
-    if(!token || !chatId || !sticker) throw new Error('Required fields: token, chatId, sticker');
+    let required = lib.parseReq({token, chatId, sticker});
+
+    if(required.length > 0) 
+        throw new RapidError('REQUIRED_FIELDS', required)
 
     let bot     = new TelegramBot(token);
     let options = lib.clearArgs({

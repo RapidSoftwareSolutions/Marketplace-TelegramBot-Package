@@ -7,7 +7,10 @@ module.exports = (req, res) => {
         fileId
     } = req.body.args;
 
-    if(!token || !fileId) throw new Error('Required fields: token, fileId');
+    let required = lib.parseReq({token, fileId});
+
+    if(required.length > 0) 
+        throw new RapidError('REQUIRED_FIELDS', required)
 
     let bot = new TelegramBot(token);
 
