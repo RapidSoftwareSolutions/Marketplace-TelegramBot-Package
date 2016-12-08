@@ -6,37 +6,6 @@ The Bot API is an HTTP-based interface created for developers keen on building b
 ## How to get credentials: 
  Just talk to [BotFather](https://telegram.me/botfather) and follow a few simple steps. 
 
-## TOC: 
-* [setWebHook](#setWebHook)
-* [getMe](#getMe)
-* [getUpdates](#getUpdates)
-* [sendMessage](#sendMessage)
-* [forwardMessage](#forwardMessage)
-* [sendPhoto](#sendPhoto)
-* [sendDocument](#sendDocument)
-* [sendSticker](#sendSticker)
-* [sendAudio](#sendAudio)
-* [sendVideo](#sendVideo)
-* [sendVoice](#sendVoice)
-* [sendLocation](#sendLocation)
-* [sendContact](#sendContact)
-* [sendChatAction](#sendChatAction)
-* [getUserProfilePhotos](#getUserProfilePhotos)
-* [getFile](#getFile)
-* [kickChatMember](#kickChatMember)
-* [leaveChat](#leaveChat)
-* [unbanChatMember](#unbanChatMember)
-* [getChat](#getChat)
-* [getChatAdministrators](#getChatAdministrators)
-* [getChatMembersCount](#getChatMembersCount)
-* [getChatMember](#getChatMember)
-* [editMessageText](#editMessageText)
-* [editMessageCaption](#editMessageCaption)
-* [sendGame](#sendGame)
-* [getGameHighScores](#getGameHighScores)
-* [getWebhookInfo](#getWebhookInfo)
- 
-<a name="setWebHook"/>
 ## Telegram.setWebHook
 Specify an url to receive incoming updates via an outgoing webHook.
 
@@ -45,7 +14,7 @@ Specify an url to receive incoming updates via an outgoing webHook.
 | token| credentials| Required: Authentication token.
 | url  | String     | HTTPS url to send updates to. Use an empty string to remove webhook integration
 
-<a name="getMe"/>
+
 ## Telegram.getMe
 Returns basic information about the bot in form of a `User` object.
 
@@ -53,7 +22,7 @@ Returns basic information about the bot in form of a `User` object.
 |------|------------|----------
 | token| credentials| Required: Authentication token.
 
-<a name="getUpdates"/>
+
 ## Telegram.getUpdates
 Use this method to receive incoming updates using long polling
 
@@ -64,7 +33,7 @@ Use this method to receive incoming updates using long polling
 | limit  | Number     | Limits the number of updates to be retrieved. Values between 1—100 are accepted. Defaults to 100.
 | timeout| Number     | Timeout in seconds for long polling.
 
-<a name="sendMessage"/>
+
 ## Telegram.sendMessage
 Send text message.
 
@@ -79,7 +48,7 @@ Send text message.
 | replyToMessageId     | Number     | If the message is a reply, ID of the original message.
 | replyMarkup          | JSON       | Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard,  instructions to hide reply keyboard or to force a reply from the user.
 
-<a name="forwardMessage"/>
+
 ## Telegram.forwardMessage
 Forward messages of any kind.
 
@@ -91,7 +60,7 @@ Forward messages of any kind.
 | messageId          | Number     | Required: Unique message identifier
 | disableNotification| Boolean    | Unique identifier for the chat where the original message was sent (or channel username in the format @channelusername)
 
-<a name="sendPhoto"/>
+
 ## Telegram.sendPhoto
 Send a photo.
 
@@ -105,7 +74,7 @@ Send a photo.
 | replyToMessageId   | Number     | If the message is a reply, ID of the original message
 | replyMarkup        | JSON       | Additional interface options.  A JSON-serialized object for an inline keyboard, custom reply keyboard,  instructions to hide reply keyboard or to force a reply from the user.
 
-<a name="sendDocument"/>
+
 ## Telegram.sendDocument
 Send a document.
 
@@ -119,7 +88,7 @@ Send a document.
 | replyToMessageId   | Number     | If the message is a reply, ID of the original message
 | replyMarkup        | JSON       | Additional interface options.  A JSON-serialized object for an inline keyboard, custom reply keyboard,  instructions to hide reply keyboard or to force a reply from the user.
 
-<a name="sendSticker"/>
+
 ## Telegram.sendSticker
 Send a sticker.
 
@@ -133,7 +102,7 @@ Send a sticker.
 | replyToMessageId   | Number     | If the message is a reply, ID of the original message
 | replyMarkup        | JSON       | Additional interface options.  A JSON-serialized object for an inline keyboard, custom reply keyboard,  instructions to hide reply keyboard or to force a reply from the user.
 
-<a name="sendAudio"/>
+
 ## Telegram.sendAudio
 Send a audio.
 
@@ -150,7 +119,7 @@ Send a audio.
 | replyToMessageId   | Number     | If the message is a reply, ID of the original message
 | replyMarkup        | JSON       | Additional interface options.  A JSON-serialized object for an inline keyboard, custom reply keyboard,  instructions to hide reply keyboard or to force a reply from the user.
 
-<a name="sendVideo"/>
+
 ## Telegram.sendVideo
 Send a video.
 
@@ -168,7 +137,7 @@ Send a video.
 | replyToMessageId   | Number     | If the message is a reply, ID of the original message
 | replyMarkup        | JSON       | Additional interface options.  A JSON-serialized object for an inline keyboard, custom reply keyboard,  instructions to hide reply keyboard or to force a reply from the user.
 
-<a name="sendVoice"/>
+
 ## Telegram.sendVoice
 Send a voice.
 
@@ -183,7 +152,7 @@ Send a voice.
 | replyToMessageId   | Number     | If the message is a reply, ID of the original message
 | replyMarkup        | JSON       | Additional interface options.  A JSON-serialized object for an inline keyboard, custom reply keyboard,  instructions to hide reply keyboard or to force a reply from the user.
 
-<a name="sendLocation"/>
+
 ## Telegram.sendLocation
 Send a location.
 
@@ -197,7 +166,7 @@ Send a location.
 | replyToMessageId   | String     | If the message is a reply, ID of the original message
 | replyMarkup        | JSON       | Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to hide reply keyboard or to force a reply from the user.
 
-<a name="sendContact"/>
+
 ## Telegram.sendContact
 Send a contact.
 
@@ -212,7 +181,7 @@ Send a contact.
 | replyToMessageId   | String     | If the message is a reply, ID of the original message
 | replyMarkup        | JSON       | Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to hide reply keyboard or to force a reply from the user.
 
-<a name="sendChatAction"/>
+
 ## Telegram.sendChatAction
 Send a chat action.
 
@@ -222,7 +191,7 @@ Send a chat action.
 | chatId| String     | Required: Unique identifier for the target chat or username of the target channel (in the format @channelusername)
 | action| String     | Required: Type of action to broadcast. Choose one, depending on what the user is about to receive: typing for text messages, upload_photo for photos, record_video or uploadVideo for videos, record_audio or upload_audio for audio files, upload_document for general files, find_location for location data
 
-<a name="getUserProfilePhotos"/>
+
 ## Telegram.getUserProfilePhotos
 Send a chat action.
 
@@ -233,7 +202,7 @@ Send a chat action.
 | offset| String     | Sequential number of the first photo to be returned. By default, all photos are returned.
 | limit | String     | Limits the number of photos to be retrieved. Values between 1—100 are accepted. Defaults to 100.
 
-<a name="getFile"/>
+
 ## Telegram.getFile
 Get file. Use this method to get basic info about a file and prepare it for downloading. Attention: link will be valid for 1 hour.
 
@@ -242,7 +211,7 @@ Get file. Use this method to get basic info about a file and prepare it for down
 | token | credentials| Required: Authentication token.
 | fileId| String     | Required: File identifier to get info about
 
-<a name="kickChatMember"/>
+
 ## Telegram.kickChatMember
 Use this method to kick a user from a group or a supergroup. In the case of supergroups, the user will not be able to return to the group on their own using invite links, etc., unless unbanned first. The bot must be an administrator in the group for this to work. Returns True on success.
 
@@ -252,7 +221,7 @@ Use this method to kick a user from a group or a supergroup. In the case of supe
 | chatId| String     | Required: Unique identifier for the target group or username of the target supergroup (in the format @supergroupusername)
 | userId| String     | Required: Unique identifier of the target user
 
-<a name="leaveChat"/>
+
 ## Telegram.leaveChat
 Use this method for your bot to leave a group, supergroup or channel. Returns True on success.
 
@@ -261,7 +230,7 @@ Use this method for your bot to leave a group, supergroup or channel. Returns Tr
 | token | credentials| Required: Authentication token.
 | chatId| String     | Required: Unique identifier for the target group or username of the target supergroup (in the format @supergroupusername)
 
-<a name="unbanChatMember"/>
+
 ## Telegram.unbanChatMember
 Use this method to unban a previously kicked user in a supergroup. The user will not return to the group automatically, but will be able to join via link, etc. The bot must be an administrator in the group for this to work.
 
@@ -271,7 +240,7 @@ Use this method to unban a previously kicked user in a supergroup. The user will
 | chatId| String     | Required: Unique identifier for the target group or username of the target supergroup (in the format @supergroupusername)
 | userId| String     | Required: Unique identifier of the target user
 
-<a name="getChat"/>
+
 ## Telegram.getChat
 Use this method to get up to date information about the chat (current name of the user for one-on-one conversations, current username of a user, group or channel, etc.). Returns a Chat object on success.
 
@@ -280,7 +249,7 @@ Use this method to get up to date information about the chat (current name of th
 | token | credentials| Required: Authentication token.
 | chatId| String     | Required: Unique identifier for the target group or username of the target supergroup (in the format @supergroupusername)
 
-<a name="getChatAdministrators"/>
+
 ## Telegram.getChatAdministrators
 Returns the administrators in a chat in form of an Array of `ChatMember` objects.
 
@@ -289,7 +258,7 @@ Returns the administrators in a chat in form of an Array of `ChatMember` objects
 | token | credentials| Required: Authentication token.
 | chatId| String     | Required: Unique identifier for the target group or username of the target supergroup (in the format @supergroupusername)
 
-<a name="getChatMembersCount"/>
+
 ## Telegram.getChatMembersCount
 Use this method to get the number of members in a chat.
 
@@ -298,7 +267,7 @@ Use this method to get the number of members in a chat.
 | token | credentials| Required: Authentication token.
 | chatId| String     | Required: Unique identifier for the target group or username of the target supergroup (in the format @supergroupusername)
 
-<a name="getChatMember"/>
+
 ## Telegram.getChatMember
 Use this method to get information about a member of a chat. Returns a ChatMember object on success.
 
@@ -308,7 +277,7 @@ Use this method to get information about a member of a chat. Returns a ChatMembe
 | chatId| String     | Required: Unique identifier for the target group or username of the target supergroup (in the format @supergroupusername)
 | userId| String     | Required: Unique identifier of the target member.
 
-<a name="editMessageText"/>
+
 ## Telegram.editMessageText
 Use this method to edit text and game messages sent by the bot or via the bot (for inline bots). On success, if edited message is sent by the bot, the edited Message is returned, otherwise True is returned.
 
@@ -323,7 +292,7 @@ Use this method to edit text and game messages sent by the bot or via the bot (f
 | disableWebPagePreview| JSON       | Disables link previews for links in this message.
 | replyMarkup          | JSON       | A JSON-serialized object for an inline keyboard.
 
-<a name="editMessageCaption"/>
+
 ## Telegram.editMessageCaption
 Use this method to edit captions of messages sent by the bot or via the bot (for inline bots). On success, if edited message is sent by the bot, the edited Message is returned, otherwise True is returned.
 
@@ -336,7 +305,7 @@ Use this method to edit captions of messages sent by the bot or via the bot (for
 | caption        | String     | New caption of the message
 | replyMarkup    | JSON       | A JSON-serialized object for an inline keyboard.
 
-<a name="sendGame"/>
+
 ## Telegram.sendGame
 Use this method to send a game. On success, the sent Message is returned.
 
@@ -349,7 +318,7 @@ Use this method to send a game. On success, the sent Message is returned.
 | replyToMessageId   | Number     | If the message is a reply, ID of the original message.
 | replyMarkup        | JSON       | Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard,  instructions to hide reply keyboard or to force a reply from the user.
 
-<a name="getGameHighScores"/>
+
 ## Telegram.getGameHighScores
 Use this method to get data for high score tables. Will return the score of the specified user and several of his neighbors in a game. On success, returns an Array of GameHighScore objects.
 
@@ -361,7 +330,7 @@ Use this method to get data for high score tables. Will return the score of the 
 | messageId      | Number     | Required if inline_message_id is not specified. Unique identifier of the sent message
 | inlineMessageId| String     | Required if chat_id and message_id are not specified. Identifier of the inline message
 
-<a name="getWebhookInfo"/>
+
 ## Telegram.getWebhookInfo
 Use this method to get current webhook status. Requires no parameters. On success, returns a WebhookInfo object. If the bot is using getUpdates, will return an object with the url field empty.
 
