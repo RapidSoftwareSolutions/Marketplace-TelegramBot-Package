@@ -2,6 +2,7 @@ module.exports.do = function(req, res){
     res.status(200).send({
         'package': 'Telegram',
         'tagline': "Telegram API Package",
+        "keywords": ["API", "message", "messaging", "sms", "text", "texting"],
         "description": "The Bot API is an HTTP-based interface created for developers keen on building bots for Telegram.",
         'image': 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Telegram_Messenger.png/480px-Telegram_Messenger.png',
         'repo': 'https://github.com/RapidSoftwareSolutions/',
