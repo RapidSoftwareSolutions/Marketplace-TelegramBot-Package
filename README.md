@@ -1,3 +1,5 @@
+[![](https://scdn.rapidapi.com/RapidAPI_banner.png)](https://rapidapi.com/package/TelegramBot/functions?utm_source=RapidAPIGitHub_TelegramFunctions&utm_medium=button&utm_content=RapidAPI_GitHub)
+
 # Telegram Package
 The Bot API is an HTTP-based interface created for developers keen on building bots for Telegram.
 * Domain: telegram.org
