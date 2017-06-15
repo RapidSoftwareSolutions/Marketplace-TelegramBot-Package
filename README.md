@@ -89,7 +89,7 @@ Send a photo.
 	keyboard: [
   		['RapidAPI ❤']]
 }
-
+```
 ## Telegram.sendDocument
 Send a document.
 
@@ -109,6 +109,7 @@ Send a document.
 	keyboard: [
   		['RapidAPI ❤']]
 }
+```
 
 ## Telegram.sendSticker
 Send a sticker.
@@ -129,7 +130,7 @@ Send a sticker.
 	keyboard: [
   		['RapidAPI ❤']]
 }
-
+```
 ## Telegram.sendAudio
 Send a audio.
 
@@ -152,7 +153,7 @@ Send a audio.
 	keyboard: [
   		['RapidAPI ❤']]
 }
-
+```
 ## Telegram.sendVideo
 Send a video.
 
@@ -176,7 +177,7 @@ Send a video.
 	keyboard: [
   		['RapidAPI ❤']]
 }
-
+```
 ## Telegram.sendVoice
 Send a voice.
 
@@ -197,7 +198,7 @@ Send a voice.
 	keyboard: [
   		['RapidAPI ❤']]
 }
-
+```
 ## Telegram.sendLocation
 Send a location.
 
@@ -217,7 +218,7 @@ Send a location.
 	keyboard: [
   		['RapidAPI ❤']]
 }
-
+```
 ## Telegram.sendContact
 Send a contact.
 
@@ -238,7 +239,7 @@ Send a contact.
 	keyboard: [
   		['RapidAPI ❤']]
 }
-
+```
 ## Telegram.sendChatAction
 Send a chat action.
 
@@ -355,7 +356,7 @@ Use this method to edit text and game messages sent by the bot or via the bot (f
 	keyboard: [
   		['RapidAPI ❤']]
 }
-
+```
 ## Telegram.editMessageCaption
 Use this method to edit captions of messages sent by the bot or via the bot (for inline bots). On success, if edited message is sent by the bot, the edited Message is returned, otherwise True is returned.
 
@@ -374,7 +375,7 @@ Use this method to edit captions of messages sent by the bot or via the bot (for
 	keyboard: [
   		['RapidAPI ❤']]
 }
-
+```
 ## Telegram.sendGame
 Use this method to send a game. On success, the sent Message is returned.
 
@@ -393,7 +394,7 @@ Use this method to send a game. On success, the sent Message is returned.
 	keyboard: [
   		['RapidAPI ❤']]
 }
-
+```
 ## Telegram.getGameHighScores
 Use this method to get data for high score tables. Will return the score of the specified user and several of his neighbors in a game. On success, returns an Array of GameHighScore objects.
 
