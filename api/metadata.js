@@ -12,6 +12,26 @@ module.exports.do = function(req, res){
                 'token',
             ]
         },
+        "events": [
+            {
+                "name": "webhookCommand",
+                "description": "webhook test command",
+                "payload": {
+                },
+                "steps": [
+                    "Navigate to box.com",
+                    "Set webhook to __WEBHOOK_URL__"
+                ],
+                "args": [
+                    {
+                        "name": "token",
+                        "type": "string",
+                        "info": "Token sent on each message",
+                        "required": true
+                    }
+                ]
+            }
+        ],
         'blocks': [{
             "name":"setWebHook",
             "description": "Specify an url to receive incoming updates via an outgoing webHook.",
