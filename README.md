@@ -6,7 +6,29 @@ The Bot API is an HTTP-based interface created for developers keen on building b
 * Credentials: token
 
 ## How to get credentials: 
- Just talk to [BotFather](https://telegram.me/botfather) and follow a few simple steps. 
+ Just talk to [BotFather](https://telegram.me/botfather) and follow a few simple steps.
+
+## Custom datatypes:
+  |Datatype|Description|Example
+  |--------|-----------|----------
+  |Datepicker|String which includes date and time|```2016-05-28 00:00:00```
+  |Map|String which includes latitude and longitude coma separated|```50.37, 26.56```
+  |List|Simple array|```["123", "sample"]```
+  |Select|String with predefined values|```sample```
+  |Array|Array of objects|```[{"Second name":"123","Age":"12","Photo":"sdf","Draft":"sdfsdf"},{"name":"adi","Second name":"bla","Age":"4","Photo":"asfserwe","Draft":"sdfsdf"}] ```
+
+## Webhook credentials
+  Please use SDK to test this feature.
+  1. Go to [RapidAPI](http://rapidapi.com)
+  2. Log in or create an account
+  3. Go to [My apps](https://dashboard.rapidapi.com/projects)
+  4. Add new project with projectName to get your project Key
+
+  | Field      | Type       | Description
+  |------------|------------|----------
+  | projectName     | credentials| Your RapidAPI project name
+  | projectKey | credentials     | Your RapidAPI project key
+
 
 ## Telegram.setWebHook
 Specify an url to receive incoming updates via an outgoing webHook.
@@ -15,6 +37,10 @@ Specify an url to receive incoming updates via an outgoing webHook.
 |------|------------|----------
 | token| credentials| Required: Authentication token.
 | url  | String     | HTTPS url to send updates to. Use an empty string to remove webhook integration
+
+You can use our service as webhookUrl:
+```https://webhooks.rapidapi.com/api/message/TelegramBot/webhookCommand/{projectName}/{projectKey}``` * see credentials description above
+
 
 
 ## Telegram.getMe
