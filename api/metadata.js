@@ -16,8 +16,24 @@ module.exports.do = function(req, res){
             {
                 "name": "webhookCommand",
                 "description": "webhook test command",
-                "payload": {
-                },
+                "payload": { "update_id": "693231410",
+                    "status": 'success',
+                    "message":
+                        { "text": 'hello world',
+                            "message_id": "54",
+                            "from":
+                                { "username": 'RapiApi',
+                                    "last_name": 'RapiApi',
+                                    "language_code": 'en-US',
+                                    "id": "66724092",
+                                    "first_name": 'RapiApi' },
+                            "date": "1498042236",
+                            "chat":
+                                { "username": 'RapiApi',
+                                    "type": 'private',
+                                    "last_name": 'RapiApi',
+                                    "id": "66724092",
+                                    "first_name": 'RapiApi' } } },
                 "steps": [
                     "Navigate to box.com",
                     "Set webhook to __WEBHOOK_URL__"
