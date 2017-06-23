@@ -15,7 +15,7 @@ module.exports.do = function(req, res){
         "events": [
             {
                 "name": "webhookCommand",
-                "description": "webhook test command",
+                "description": "Command for vendor webhook calls",
                 "payload": { "update_id": "693231410",
                     "status": 'success',
                     "message":
@@ -35,8 +35,8 @@ module.exports.do = function(req, res){
                                     "id": "66724092",
                                     "first_name": 'RapiApi' } } },
                 "steps": [
-                    "Navigate to box.com",
-                    "Set webhook to __WEBHOOK_URL__"
+                    "Navigate to setWebHook function",
+                    "Set url to __WEBHOOK_URL__"
                 ],
                 "args": [
                     {
