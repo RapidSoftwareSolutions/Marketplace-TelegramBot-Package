@@ -35,8 +35,9 @@ module.exports.do = function(req, res){
                                     "id": "66724092",
                                     "first_name": 'RapiApi' } } },
                 "steps": [
-                    "Navigate to setWebHook function",
-                    "Set url to __WEBHOOK_URL__"
+                    "Navigate to https://telegram.me/botfather to setup your telegram bot and get your token",
+                    "Navigate to https://rapidapi.com/package/TelegramBot/functions/setWebHook",
+                    "create your webhook by using your token from step 1 and the following URL:"
                 ],
                 "args": [
                     {
@@ -62,7 +63,7 @@ module.exports.do = function(req, res){
                     name: "url",
                     type: "String",
                     info: "HTTPS url to send updates to. Use an empty string to remove webhook integration",
-                    required: false
+                    required: true
                 },
             ],
             'callbacks':[
