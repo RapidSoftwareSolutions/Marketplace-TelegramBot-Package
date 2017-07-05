@@ -37,7 +37,7 @@ module.exports.do = function(req, res){
                 "steps": [
                     "Navigate to https://telegram.me/botfather to setup your telegram bot and get your token",
                     "Navigate to https://rapidapi.com/package/TelegramBot/functions/setWebHook",
-                    "create your webhook by using your token from step 1 and the following URL:"
+                    "Create your webhook by using your token from step 1 and the following URL:"
                 ],
                 "args": [
                     {
