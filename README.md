@@ -6,7 +6,7 @@ The Bot API is an HTTP-based interface created for developers keen on building b
 * Credentials: token
 
 ## How to get credentials: 
- Use the [BotFather](https://telegram.me/botfather) bot and follow the steps provided by the bot.
+ Use the [BotFather](https://telegram.me/botfather) bot and follow the steps provided.
 
 ## Custom datatypes:
   |Datatype|Description|Example
