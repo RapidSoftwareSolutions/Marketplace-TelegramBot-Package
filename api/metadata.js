@@ -50,7 +50,7 @@ module.exports.do = function(req, res){
             }
         ],
         'steps': [
-            "Use the BotFather(https://telegram.me/botfather) bot and follow the steps provided.   
+            "Use the BotFather(https://telegram.me/botfather) bot and follow the steps provided"
         ],
         'blocks': [{
             "name":"setWebHook",
