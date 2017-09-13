@@ -49,6 +49,9 @@ module.exports.do = function(req, res){
                 ]
             }
         ],
+        'steps': [
+            "Use the BotFather(https://telegram.me/botfather) bot and follow the steps provided.   
+        ]
         'blocks': [{
             "name":"setWebHook",
             "description": "Specify an url to receive incoming updates via an outgoing webHook.",
